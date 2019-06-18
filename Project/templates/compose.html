@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Compose New Mail</h2>
+<div class="container">
+<div class="flashh">
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                  <marquee direction="down" behaviour="scroll"  scrollamount="2"   style="text-align:center;">  {{ message }}</marquee>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+</div>
+  <form method="POST">
+
+    <h3><label for="to">To</label></h3>
+    <input type="text" id="to" name="to" placeholder="recivers email address..."><br>
+
+    <h3><label for="from">From</label></h3>
+    <input type="text" id="from" name="from" placeholder="senders email address..."><br>
+
+    <h3><label for="subject">Subject</label></h3>
+    <textarea id="subject" name="sub" placeholder="Write your subject..." rows="2" cols="50"></textarea><br>
+
+    <h3><label for="message">Message</label></h3>
+    <textarea id="message" name="msg" placeholder="Write your message..." rows="8" cols="50"></textarea><br>
+     
+   <h3><label for="file">Choose file to upload</label></h3>
+   <input type="file" id="file" name="file" multiple><br><br>
+
+   <input type="submit" name="sub" value="Send">
+
+  </form>
+</div>
+
+</body>
+</html>

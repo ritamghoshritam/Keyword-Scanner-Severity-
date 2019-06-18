@@ -1,0 +1,242 @@
+<html>
+<head>
+
+<title>Login Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+</head>
+<script>
+
+</script>
+<style>
+#my
+{
+zoom: 70%;
+}
+
+
+input[type=text], select {
+    width: 65%;
+    
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    align: left;
+    color:black;
+    
+}
+
+
+input[type=password], select {
+    width: 65%;
+   
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    align: left;
+    color:black;
+    
+}
+
+
+
+input[type=number], select {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    align: center;
+    color:grey;
+    
+}
+
+
+input[type=date], select {
+    width: 24%;
+	
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color:grey;
+	
+}
+
+footer
+{
+margin-bottom:0px;
+text-align:center;
+}
+
+form {
+	
+
+	}
+
+h3{ 
+	padding: 5px;
+}
+
+
+input[type=submit] {
+    width: 20%;
+    align: center;
+    background-color:rgba(0,0,0, 0.45);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+input[type=radio] {
+color: white;
+}
+
+
+
+
+
+input[type=submit]:hover 
+{
+    background-color: black;
+}
+
+
+
+
+
+
+
+div {
+      border-radius: 5px;
+    background: rgba(0,0,0, 0.6);
+	padding: 10px;
+	padding-bottom:10px;
+     margin-top:10px;
+     margin-left:0%;
+     margin-right:30%;
+	 margin-bottom:10px;
+	
+    	}
+
+
+
+
+
+
+
+body { 
+    background-image: url('bg6.jpg'),url('JD972.jpg');
+    
+}
+
+</style>
+<body>
+
+<nav   class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <a  style=";margin-top:5px;width: 100%; text-align: center; font-size:40px;"class="navbar-brand" href="#">Compose New Message</a>
+
+
+</nav>
+<div class="flashh" style=";margin-top:5px;width: 100%;font-size:20px;text-align: center;color:black; background: rgba(0,0,0, 0.25)">
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                  <marquee direction="down" behaviour="scroll"  scrollamount="2"   style="text-align:center;">  {{ message }}</marquee>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+</div>
+<form name="myForm" method="POST" action="/" enctype="multipart/form-data">
+
+	<div class="container" style="margin-top:30px;width: 25%;font-size:20px;text-align: left;color:white; background: rgba(0,0,0, 0.65)" >
+	
+			
+			<label for="uname" ><b style="color:white;" >UserID&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+			
+			<input type="text" placeholder="" name="uid">
+			
+
+			<br><br>
+		
+	
+			<label for="psw"><b b style="color:white;" >Password</b></label>
+			
+			
+			<input type="password"  name="psw">
+		
+		
+				<br><br>
+	
+	</div>
+	
+	
+		<div class="container" style=";margin-top:30px;width: 75%;font-size:20px;text-align: left;color:white; background: rgba(0,0,0, 0.45)">
+			
+
+			<div class="container" style="padding: 10px;margin-top:30px;width: 75%;font-size:20px;text-align: left;color:white; background: rgba(0,0,0, 0.25)">
+
+				
+
+
+
+						<label for="to">To</label>
+
+
+					<input style="margin-left:15%" type="text" id="to" name="to" pattern=".+@gmail.com" size="30" required><br>
+						<br>	
+
+
+						<label for="from">From</label>
+							<input style="margin-left:12%"  type="text" id="from" name="from" pattern=".+@gmail.com" size="30" required ><br>	
+							<br>
+						
+						<label for="subject">Subject</label><br>
+						
+						<textarea  style="text-color:black; margin-left:18%; display: inline-block; border: 1px solid #ccc; border-radius: 7px; box-sizing: border-box; "  id="subject" name="sub" rows="2" cols="57"></textarea><br>
+
+						<label for="message">Message</label><br>
+						
+						<textarea style="text-color:black; margin-left:18%; display: inline-block; border: 1px solid #ccc; border-radius: 7px; box-sizing: border-box; "  id="message" name="msg" placeholder="" rows="5" cols="57"></textarea><br>
+			 
+						<center><h3><label for="file">Choose file to upload</label></h3></center>
+						
+						<input style="margin-left:35%;" type ="file" id="file" name="f"><br><br>
+						
+						
+						<center><input type="submit" value="submit" name="sub"><br></center>
+				
+				
+				
+				
+				
+				</div>
+		
+</form>
+<!-- Footer -->
+
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
