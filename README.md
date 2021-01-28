@@ -1,1 +1,0 @@
-# Keyword-Scanner-Severity-Checker
